@@ -5,7 +5,7 @@ pipeline{
             steps {
                 sh '''
                 cd vote
-                docker build -t ramkrishv10/pipeline-vote:v${BUILD_NUMBER} .
+                docker build -t ramkrishv10/pipeline-vote:v1 .
                 '''
             }
         }
@@ -14,8 +14,8 @@ pipeline{
                 sh "docker images"
                 //sh "docker login"
                 //sh '''
-              docker push ramkrishv10/pipeline-vote:v${BUILD_NUMBER}
-              docker run -itd ramkrishv10/pipeline-vote:v${BUILD_NUMBER}
+              docker push ramkrishv10/pipeline-vote:v1
+              docker run -itd ramkrishv10/pipeline-vote:v1
               docker ps
               '''
             }
