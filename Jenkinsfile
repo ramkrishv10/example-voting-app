@@ -12,7 +12,7 @@ pipeline{
         stage ("Deploy"){
             steps {
                 sh "docker images"
-                //sh "docker login"
+                sh "docker login"
                 sh '''
               docker push ramkrishv10/pipeline-vote:v1
               docker run -itd ramkrishv10/pipeline-vote:v1
